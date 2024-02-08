@@ -20,6 +20,8 @@ from django.urls import reverse
 #     def __str__(self):
 #         return self.title
 
+
+
 class Route(models.Model):
     """
     Модель существующих маршрутов
@@ -45,5 +47,5 @@ class Route(models.Model):
         return f'{self.name} - {self.price}'
     
     def get_absolute_url(self):
-        return reverse("model_detail", kwargs={"route_slug": self.slug})
+        return reverse("route", kwargs={"slug": self.slug})
     

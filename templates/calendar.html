@@ -1,0 +1,1026 @@
+<div class="p-timetable">
+    <div class="container-fluid">
+      <div class="g-top">
+        <div class="g-top__txt">
+          <h1 class="g-top__title">расписание</h1>
+          <p class="g-top__line">/</p>
+          <p class="g-top__city city">саратов</p>
+        </div>
+        <div class="p-timetable__input-search">
+          <form action="/search" method="get" id="searchForm">
+            <input class="p-timetable__search" id="searchField" type="text" placeholder="Найти..." name="query">
+          </form>
+          <ul class="p-timetable__search-result" id="searchResultList">
+          </ul>
+        </div>
+        <div class="g-filters__mobile">
+          <p class="g-filters__activate">фильтрация</p>
+          <div class="g-filters__bottom"></div>
+        </div>
+  
+      </div>
+    </div>
+    <div class="g-filters p-timetable__filter">
+      <div class="container-fluid">
+          <form class="g-filters__form" id="filterForm" name="filterForm">
+            <input type="hidden" name="authenticity_token" id="authenticity_token" value="R8lqrma05GxxRgQqVBDFG3ezbc2z1uWxjUbR5kaEXcHdJFLtTBQ6NtgjFMgbktdVLx3UQrv8TZplJMmUqnNOIw==">
+            <input type="hidden" name="format[]" id="format_" value="js">
+            <div class="g-filters__header">
+              <p class="g-filters__title">фильтрация</p>
+              <div class="g-filters__close"></div>
+            </div>
+            <div class="g-filters__row">
+              <div class="g-filter">
+                <div class="g-filter__head">
+                  <p class="g-filter__title">Возраст</p>
+                  <div class="g-filter__arrow g-filter__arrow-default g-filter__arrow_age">
+                    <p class="g-filter__choose" data-initial-text="Для всех">
+                      Для всех
+                    </p>
+                    <div class="g-filter__icon"></div>
+                  </div>
+                </div>
+                <div class="g-filter__clean"></div>
+                <div class="g-filter__dropdown">
+                    <div class="g-filter__dropdown-row">
+                      <label for="dropdown-3,5+" class="g-filter__label g-filter__label_kids">
+                        <input class="g-filter__dropdown-checkbox" name="age[]" value="3,5+" id="dropdown-3,5+" type="checkbox">
+                        <span class="g-filter__dropdown-custom"></span>
+                        <p class="g-filter__dropdown-title">
+                          3,5+
+                        </p>
+                      </label>
+                    </div>
+                    <div class="g-filter__dropdown-row">
+                      <label for="dropdown-6+" class="g-filter__label g-filter__label_kids">
+                        <input class="g-filter__dropdown-checkbox" name="age[]" value="6+" id="dropdown-6+" type="checkbox">
+                        <span class="g-filter__dropdown-custom"></span>
+                        <p class="g-filter__dropdown-title">
+                          6+
+                        </p>
+                      </label>
+                    </div>
+                    <div class="g-filter__dropdown-row">
+                      <label for="dropdown-7+" class="g-filter__label g-filter__label_kids">
+                        <input class="g-filter__dropdown-checkbox" name="age[]" value="7+" id="dropdown-7+" type="checkbox">
+                        <span class="g-filter__dropdown-custom"></span>
+                        <p class="g-filter__dropdown-title">
+                          7+
+                        </p>
+                      </label>
+                    </div>
+                    <div class="g-filter__dropdown-row">
+                      <label for="dropdown-13+" class="g-filter__label g-filter__label_kids">
+                        <input class="g-filter__dropdown-checkbox" name="age[]" value="13+" id="dropdown-13+" type="checkbox">
+                        <span class="g-filter__dropdown-custom"></span>
+                        <p class="g-filter__dropdown-title">
+                          13+
+                        </p>
+                      </label>
+                    </div>
+                    <div class="g-filter__dropdown-row">
+                      <label for="dropdown-14+" class="g-filter__label g-filter__label_kids">
+                        <input class="g-filter__dropdown-checkbox" name="age[]" value="14+" id="dropdown-14+" type="checkbox">
+                        <span class="g-filter__dropdown-custom"></span>
+                        <p class="g-filter__dropdown-title">
+                          14+
+                        </p>
+                      </label>
+                    </div>
+                  <div class="g-filter__dropdown-confirmation">
+                    <span class="g-filter__dropdown-confirm">Подтвердить</span>
+                    <div class="g-filter__dropdown-wrapline"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="g-filter">
+                <div class="g-filter__head">
+                  <p class="g-filter__title">Формат</p>
+                  <div class="g-filter__arrow g-filter__arrow-default g-filter__arrow_format">
+                    <p class="g-filter__choose" data-initial-text="Для всех">
+                      Для всех
+                    </p>
+                    <div class="g-filter__icon"></div>
+                  </div>
+                </div>
+                <div class="g-filter__clean"></div>
+                <div class="g-filter__dropdown">
+                  <div class="g-filter__dropdown-row">
+                    <label for="dropdown-one-day" class="g-filter__label g-filter__label_day">
+                      <input class="g-filter__dropdown-checkbox" name="p_format[]" value="1-дневный МК" id="dropdown-one-day" type="checkbox">
+                      <span class="g-filter__dropdown-custom"></span>
+                      <p class="g-filter__dropdown-title">1-дневный МК</p>
+                    </label>
+                  </div>
+                  <div class="g-filter__dropdown-row">
+                    <label for="dropdown-two-day" class="g-filter__label g-filter__label_day">
+                      <input class="g-filter__dropdown-checkbox" name="p_format[]" value="2-дневный МК" id="dropdown-two-day" type="checkbox">
+                      <span class="g-filter__dropdown-custom"></span>
+                      <p class="g-filter__dropdown-title">2-дневный МК</p>
+                    </label>
+                  </div>
+                  <div class="g-filter__dropdown-row">
+                    <label for="dropdown-three-day" class="g-filter__label g-filter__label_day">
+                      <input class="g-filter__dropdown-checkbox" name="p_format[]" value="3-дневный МК" id="dropdown-three-day" type="checkbox">
+                      <span class="g-filter__dropdown-custom"></span>
+                      <p class="g-filter__dropdown-title">3-дневный МК</p>
+                    </label>
+                  </div>
+                  <div class="g-filter__dropdown-row">
+                    <label for="dropdown-mini" class="g-filter__label g-filter__label_day">
+                      <input class="g-filter__dropdown-checkbox" name="p_format[]" value="Мини-курс" id="dropdown-mini" type="checkbox">
+                      <span class="g-filter__dropdown-custom"></span>
+                      <p class="g-filter__dropdown-title">Мини-курс</p>
+                    </label>
+                  </div>
+                  <div class="g-filter__dropdown-row">
+                    <label for="dropdown-default" class="g-filter__label g-filter__label_day">
+                      <input class="g-filter__dropdown-checkbox" name="format" value="Базовый курс" id="dropdown-default" type="checkbox">
+                      <span class="g-filter__dropdown-custom"></span>
+                      <p class="g-filter__dropdown-title">Базовый курс</p>
+                    </label>
+                  </div>
+                  <div class="g-filter__dropdown-row">
+                    <label for="dropdown-difficult" class="g-filter__label">
+                      <input class="g-filter__dropdown-checkbox" name="p_format[]" value="Продвинутый курс" id="dropdown-difficult" type="checkbox">
+                      <span class="g-filter__dropdown-custom"></span>
+                      <p class="g-filter__dropdown-title">Продвинутый курс</p>
+                    </label>
+                  </div>
+                  <div class="g-filter__dropdown-confirmation">
+                    <span class="g-filter__dropdown-confirm">Подтвердить</span>
+                    <div class="g-filter__dropdown-wrapline"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="g-filter g-filter_type">
+                <div class="g-filter__head">
+                  <p class="g-filter__title">Тип</p>
+                  <div class="g-filter__arrow g-filter__arrow-default g-filter__arrow_type">
+                    <p class="g-filter__choose" data-initial-text="Для всех">
+                      Для всех
+                    </p>
+                    <div class="g-filter__icon"></div>
+                  </div>
+                </div>
+                <div class="g-filter__clean"></div>
+                <div class="g-filter__dropdown">
+                  <div class="g-filter__dropdown-row">
+                    <label for="dropdown-circle" class="g-filter__label">
+                      <input class="g-filter__dropdown-checkbox" name="type[]" value="Гончарный круг" id="dropdown-circle" type="checkbox">
+                      <span class="g-filter__dropdown-custom"></span>
+                      <p class="g-filter__dropdown-title">Гончарный круг</p>
+                    </label>
+                  </div>
+                  <div class="g-filter__dropdown-row">
+                    <label for="dropdown-modeling" class="g-filter__label g-filter__label_type">
+                      <input class="g-filter__dropdown-checkbox" name="type[]" value="Ручная лепка" id="dropdown-modeling" type="checkbox">
+                      <span class="g-filter__dropdown-custom"></span>
+                      <p class="g-filter__dropdown-title">Ручная лепка</p>
+                    </label>
+                  </div>
+                  <div class="g-filter__dropdown-row">
+                    <label for="dropdown-circle-modeling" class="g-filter__label g-filter__label_type">
+                      <input class="g-filter__dropdown-checkbox" name="type[]" value="Круг + лепка" id="dropdown-circle-modeling" type="checkbox">
+                      <span class="g-filter__dropdown-custom"></span>
+                      <p class="g-filter__dropdown-title">Круг + лепка</p>
+                    </label>
+                  </div>
+                  <div class="g-filter__dropdown-row">
+                    <label for="dropdown-painting" class="g-filter__label g-filter__label_type">
+                      <input class="g-filter__dropdown-checkbox" name="type[]" value="Роспись" id="dropdown-painting" type="checkbox">
+                      <span class="g-filter__dropdown-custom"></span>
+                      <p class="g-filter__dropdown-title">Роспись</p>
+                    </label>
+                  </div>
+                  <div class="g-filter__dropdown-confirmation">
+                    <span class="g-filter__dropdown-confirm">Подтвердить</span>
+                    <div class="g-filter__dropdown-wrapline"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="g-filters__row">
+              <div class="g-filter">
+                <p class="g-filter__title">
+                  Дата
+                </p>
+                <div class="g-filter__double">
+                  <div class="g-filter__calendar">
+                    <div class="g-filter__arrow g-filter__arrow_date" id="startDatePicker">
+                      <input type="text" name="startDay" class="g-filter__fakeinput" id="fakeInputStartDatepicker">
+                      <p class="g-filter__choose g-filter__choose_date" data-initial-text="с:">
+                        с: <span class="g-filter__value">08.02</span>
+                      </p>
+                      <div class="g-filter__icon"></div>
+                      <div class="g-filter__clean g-filter__clean_date g-filter__clean-start"></div>
+                    </div>
+                  </div>
+                  <div class="g-filter__calendar">
+                    <div class="g-filter__arrow g-filter__arrow_date" id="endDatePicker">
+                      <input type="text" name="endDay" class="g-filter__fakeinput g-filter__fakeinput_end" id="fakeInputEndDatepicker">
+                      <p class="g-filter__choose g-filter__choose_date" data-initial-text="по:">
+                        по: <span class="g-filter__value"></span>
+                      </p>
+                      <div class="g-filter__icon"></div>
+                      <div class="g-filter__clean g-filter__clean_date g-filter__clean-end"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="g-filter g-filter_time">
+                <div class="g-filter__head">
+                  <p class="g-filter__title">Время</p>
+                  <div class="g-filter__arrow g-filter__arrow-default g-filter__arrow_time">
+                    <p class="g-filter__choose g-filter__choose_time" data-initial-text="Все">Все</p>
+                    <div class="g-filter__icon"></div>
+                  </div>
+                </div>
+                <div class="g-filter__clean"></div>
+                <div class="g-filter__dropdown">
+                  <div class="g-filter__dropdown-row">
+                    <label for="dropdown-morning" class="g-filter__label g-filter__label_time">
+                      <input class="g-filter__dropdown-checkbox" name="time[]" id="dropdown-morning" value="утро (до 12:00)" type="checkbox">
+                      <span class="g-filter__dropdown-custom"></span>
+                      <p class="g-filter__dropdown-title">утро (до 12:00)</p>
+                    </label>
+                  </div>
+                  <div class="g-filter__dropdown-row">
+                    <label for="dropdown-day" class="g-filter__label g-filter__label_sun">
+                      <input class="g-filter__dropdown-checkbox" name="time[]" id="dropdown-day" value="день (12:00 - 18:00)" type="checkbox">
+                      <span class="g-filter__dropdown-custom"></span>
+                      <p class="g-filter__dropdown-title">день (12:00-18:00)</p>
+                    </label>
+                  </div>
+                  <div class="g-filter__dropdown-row">
+                    <label for="dropdown-evening" class="g-filter__label g-filter__label_time">
+                      <input class="g-filter__dropdown-checkbox" name="time[]" id="dropdown-evening" value="вечер (с 18:00)" type="checkbox">
+                      <span class="g-filter__dropdown-custom"></span>
+                      <p class="g-filter__dropdown-title">вечер (с 18:00)</p>
+                    </label>
+                  </div>
+                  <div class="g-filter__dropdown-confirmation">
+                    <span class="g-filter__dropdown-confirm">Подтвердить</span>
+                    <div class="g-filter__dropdown-wrapline"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="g-filter__wrap g-filter__wrap_timetable">
+                <div class="g-filter g-filter_cost">
+                  <p class="g-filter__title">Стоимость</p>
+                  <div class="g-filter__doublecost">
+                    <div class="g-filter__cost">
+                      <div class="g-filter__arrow g-filter__arrow-cost g-filter__arrow_from">
+                        <input type="text" class="g-filter__doublecost-input" id="costStartInput" name="startCost">
+                        <p class="g-filter__choose" data-initial-text="от">
+                          от
+                          <span class="example-val" id="slider-snap-value-lower">0</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="g-filter__cost">
+                      <div class="g-filter__arrow g-filter__arrow-cost g-filter__arrow_to">
+                        <input type="text" class="g-filter__doublecost-input" id="costEndInput" name="endCost">
+                        <p class="g-filter__choose" data-initial-text="до">
+                          до
+                          <span class="example-val" id="slider-snap-value-upper">65000</span>
+                          ₽
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="range-slider" data-start="0" data-end="65000" class="noUi-target noUi-ltr noUi-horizontal"><div class="noUi-base"><div class="noUi-connects"><div class="noUi-connect" style="transform: translate(0%, 0px) scale(1, 1);"></div></div><div class="noUi-origin" style="transform: translate(-1000%, 0px); z-index: 5;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="65000.0" aria-valuenow="0.0" aria-valuetext="0"><div class="noUi-touch-area"></div></div></div><div class="noUi-origin" style="transform: translate(0%, 0px); z-index: 4;"><div class="noUi-handle noUi-handle-upper" data-handle="1" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="65000.0" aria-valuenow="65000.0" aria-valuetext="65000"><div class="noUi-touch-area"></div></div></div></div></div>
+                </div>
+                <div class="g-filter__clear">
+                  <div class="g-filter__refresh g-filter__refresh_desktop"></div>
+                </div>
+              </div>
+            </div>
+            <div class="g-filter__clear g-filter__clear_mobile">
+              <div class="g-filter__done btn btn-success cert-button g-celebrate__link g-cert">
+                Применить фильтры
+                <div class="g-filter__btnline"></div>
+              </div>
+              <div class="g-filter__flex">
+                <div class="g-filter__refresh g-filter__refresh_mobile"></div>
+                <p class="g-filter__reset">сбросить фильтры</p>
+              </div>
+            </div>
+          </form>
+      </div>
+    </div>
+  
+    <div class="p-timetable__events" id="my_timetable">
+        <div class="p-timetable__events-wrapper">
+      <div class="p-timetable__dayslider swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+        <div class="swiper-wrapper" id="swiper-wrapper-3b1377dc49f71f110" aria-live="polite" style="transition-duration: 0ms; transform: translate3d(-1927.5px, 0px, 0px);">
+          <div class="p-timetable__dayslider-date swiper-slide" style="width: 365.312px; margin-right: 30px;" role="group" aria-label="1 / 8">
+            <p class="p-timetable__dayslider-month"> 8 февраля</p>
+            <p class="p-timetable__dayslider-daytime">Чт</p>
+          </div>
+          <div class="p-timetable__dayslider-date swiper-slide" style="width: 365.312px; margin-right: 30px;" role="group" aria-label="2 / 8">
+            <p class="p-timetable__dayslider-month"> 9 февраля</p>
+            <p class="p-timetable__dayslider-daytime">Пт</p>
+          </div>
+          <div class="p-timetable__dayslider-date swiper-slide" style="width: 365.312px; margin-right: 30px;" role="group" aria-label="3 / 8">
+            <p class="p-timetable__dayslider-month">10 февраля</p>
+            <p class="p-timetable__dayslider-daytime">Сб</p>
+          </div>
+          <div class="p-timetable__dayslider-date swiper-slide" style="width: 365.312px; margin-right: 30px;" role="group" aria-label="4 / 8">
+            <p class="p-timetable__dayslider-month">11 февраля</p>
+            <p class="p-timetable__dayslider-daytime">Вс</p>
+          </div>
+          <div class="p-timetable__dayslider-date swiper-slide swiper-slide-prev" style="width: 365.312px; margin-right: 30px;" role="group" aria-label="5 / 8">
+            <p class="p-timetable__dayslider-month">13 февраля</p>
+            <p class="p-timetable__dayslider-daytime">Вт</p>
+          </div>
+          <div class="p-timetable__dayslider-date swiper-slide swiper-slide-active" style="width: 365.312px; margin-right: 30px;" role="group" aria-label="6 / 8">
+            <p class="p-timetable__dayslider-month">14 февраля</p>
+            <p class="p-timetable__dayslider-daytime">Ср</p>
+          </div>
+          <div class="p-timetable__dayslider-date swiper-slide swiper-slide-next" style="width: 365.312px; margin-right: 30px;" role="group" aria-label="7 / 8">
+            <p class="p-timetable__dayslider-month">15 февраля</p>
+            <p class="p-timetable__dayslider-daytime">Чт</p>
+          </div>
+          <div class="p-timetable__dayslider-date swiper-slide" role="group" aria-label="8 / 8" style="width: 365.312px; margin-right: 30px;">
+            <p class="p-timetable__dayslider-month">12 марта</p>
+            <p class="p-timetable__dayslider-daytime">Вт</p>
+          </div>
+        </div>
+        <div class="p-timetable__dayslider-control p-timetable__dayslider-control_prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-3b1377dc49f71f110" aria-disabled="false">
+        </div>
+        <div class="p-timetable__dayslider-control p-timetable__dayslider-control_next swiper-button-disabled" tabindex="-1" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-3b1377dc49f71f110" aria-disabled="true">
+        </div>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+    </div>
+    <div class="p-timetable__slider swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+      <div class="swiper-wrapper" id="swiper-wrapper-821a78855327c55f" aria-live="polite" style="transform: translate3d(-1927.5px, 0px, 0px); transition-duration: 0ms;">
+        <div class="p-timetable__slider-day swiper-slide" style="width: 365.312px; margin-right: 30px;" role="group" aria-label="1 / 8">
+          <div class="p-timetable__slider-wrap">
+              <a class="p-timetable__slider-link" href="/schedule/191830">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/020/292/medium/7GU4vfprHdg.jpg?1621694472" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">дети 6+ Плошка на ножках</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">12:00-15:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">1500₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191835">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/049/780/medium/IMG_2475.JPG?1665599271" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Взрослые/мк Вазочка гранат</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">12:00-14:30</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">2000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191836">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/010/309/medium/IMG_9099.jpg?1579190645" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Индивидуальный урок</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">13:00-15:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">4000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191831">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/044/716/medium/_MG_9185.jpg?1637260164" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">дети 6+ Колокольчик </p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">16:00-18:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">1500₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191837">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/010/309/medium/IMG_9099.jpg?1579190645" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Индивидуальный урок</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">16:00-18:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">4000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191834">
+                <div class="p-timetable__slide ">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/051/461/medium/IMG_4757.PNG?1668245850" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Взрослые/мк HUMAN</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">19:00-22:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">2500₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-seat">Осталось мест: 3</p>
+                      <div class="p-timetable__slide-entry p-timetable__slide-entry_brown p-timetable__slide-entry_close">
+                        Записаться
+                        <div class="p-timetable__slide-wrapline p-timetable__slide-wrapline_brown"></div>
+                      </div>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191833">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/054/860/medium/IMG_6160.JPG?1685959827" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Свидание</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">19:00-21:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">6000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+          </div>
+        </div>
+        <div class="p-timetable__slider-day swiper-slide" style="width: 365.312px; margin-right: 30px;" role="group" aria-label="2 / 8">
+          <div class="p-timetable__slider-wrap">
+              <a class="p-timetable__slider-link" href="/schedule/191841">
+                <div class="p-timetable__slide ">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/020/741/medium/c8d7262a460d836224a907939b96b707.jpg?1579193556" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">дети 6+ Конфетница-корги</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">12:00-15:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">1500₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-seat">Осталось мест: 6</p>
+                      <div class="p-timetable__slide-entry p-timetable__slide-entry_brown p-timetable__slide-entry_close">
+                        Записаться
+                        <div class="p-timetable__slide-wrapline p-timetable__slide-wrapline_brown"></div>
+                      </div>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191843">
+                <div class="p-timetable__slide ">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/011/029/medium/DSC_8584.jpg?1579190853" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Взрослые/мк Эльфийская кружка</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">12:00-15:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">2000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-seat">Осталось мест: 5</p>
+                      <div class="p-timetable__slide-entry p-timetable__slide-entry_brown p-timetable__slide-entry_close">
+                        Записаться
+                        <div class="p-timetable__slide-wrapline p-timetable__slide-wrapline_brown"></div>
+                      </div>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191838">
+                <div class="p-timetable__slide ">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/010/309/medium/IMG_9099.jpg?1579190645" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Индивидуальный урок</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">13:00-15:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">4000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-seat">Осталось мест: 1</p>
+                      <div class="p-timetable__slide-entry p-timetable__slide-entry_brown p-timetable__slide-entry_close">
+                        Записаться
+                        <div class="p-timetable__slide-wrapline p-timetable__slide-wrapline_brown"></div>
+                      </div>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191839">
+                <div class="p-timetable__slide ">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/010/309/medium/IMG_9099.jpg?1579190645" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Индивидуальный урок</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">16:00-18:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">4000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-seat">Осталось мест: 1</p>
+                      <div class="p-timetable__slide-entry p-timetable__slide-entry_brown p-timetable__slide-entry_close">
+                        Записаться
+                        <div class="p-timetable__slide-wrapline p-timetable__slide-wrapline_brown"></div>
+                      </div>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191842">
+                <div class="p-timetable__slide ">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/039/517/medium/_MG_0480.JPG?1623412059" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">дети 6+ Лепная тарелочка Лапки</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">16:00-18:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">1500₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-seat">Осталось мест: 3</p>
+                      <div class="p-timetable__slide-entry p-timetable__slide-entry_brown p-timetable__slide-entry_close">
+                        Записаться
+                        <div class="p-timetable__slide-wrapline p-timetable__slide-wrapline_brown"></div>
+                      </div>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191840">
+                <div class="p-timetable__slide ">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/054/860/medium/IMG_6160.JPG?1685959827" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Свидание</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">19:00-21:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">6000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-seat">Осталось мест: 1</p>
+                      <div class="p-timetable__slide-entry p-timetable__slide-entry_brown p-timetable__slide-entry_close">
+                        Записаться
+                        <div class="p-timetable__slide-wrapline p-timetable__slide-wrapline_brown"></div>
+                      </div>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191845">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/049/005/medium/J6W1wcaD0e-Extdd0SL5nPaym7oq0TRYK--vS0W-HlDL3gU2N2kfefg5YNvbEgBNUxsEpl6B19kD7cTLCbznti5o.jpg?1654608492" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Взрослые/мк Маяк</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">19:00-22:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">2000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191844">
+                <div class="p-timetable__slide ">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/049/792/medium/IMG_3640_%281%29.JPG?1665600743" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Взрослые/мк Кружка мечтателя</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">19:00-22:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">2000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-seat">Осталось мест: 1</p>
+                      <div class="p-timetable__slide-entry p-timetable__slide-entry_brown p-timetable__slide-entry_close">
+                        Записаться
+                        <div class="p-timetable__slide-wrapline p-timetable__slide-wrapline_brown"></div>
+                      </div>
+                  </div>
+                </div>
+              </a>
+          </div>
+        </div>
+        <div class="p-timetable__slider-day swiper-slide" style="width: 365.312px; margin-right: 30px;" role="group" aria-label="3 / 8">
+          <div class="p-timetable__slider-wrap">
+              <a class="p-timetable__slider-link" href="/schedule/191849">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/047/525/medium/IMG_3738.PNG?1646467290" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">дети 6+ Ваза с цветами</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">10:00-13:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">1500₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191848">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/030/586/medium/IMG_0400.JPG?1602327894" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">дети 6+ Мисочка Кит</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">10:00-12:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">1500₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191846">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/039/251/medium/EK2gSAPXNQs.jpg?1620220760" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">3,5+ Малютка KIDS мисочка</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">10:00-11:45</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">1200₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191847">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/039/251/medium/EK2gSAPXNQs.jpg?1620220760" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">3,5+ Малютка KIDS мисочка</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">12:15-14:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">1200₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191850">
+                <div class="p-timetable__slide ">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/039/053/medium/c24664d7654a03ad5af174f5847c3326.jpg?1619181203" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">13+ Ладошки Будды</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">14:00-16:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">2000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-seat">Осталось мест: 4</p>
+                      <div class="p-timetable__slide-entry p-timetable__slide-entry_brown p-timetable__slide-entry_close">
+                        Записаться
+                        <div class="p-timetable__slide-wrapline p-timetable__slide-wrapline_brown"></div>
+                      </div>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191852">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/049/793/medium/IMG_3476.JPG?1665600784" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Взрослые/мк Баночка жёлудь</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">18:00-21:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">2000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191851">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/041/123/medium/IMG_6364.JPG?1627407589" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Взрослые/мк Миска Черепаха</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">18:00-21:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">2000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+          </div>
+        </div>
+        <div class="p-timetable__slider-day swiper-slide" style="width: 365.312px; margin-right: 30px;" role="group" aria-label="4 / 8">
+          <div class="p-timetable__slider-wrap">
+              <a class="p-timetable__slider-link" href="/schedule/191853">
+                <div class="p-timetable__slide ">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/033/974/medium/IMG_2227.JPG?1609845891" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">дети 6+ Копилка </p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">10:00-12:30</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">1500₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-seat">Осталось мест: 8</p>
+                      <div class="p-timetable__slide-entry p-timetable__slide-entry_brown p-timetable__slide-entry_close">
+                        Записаться
+                        <div class="p-timetable__slide-wrapline p-timetable__slide-wrapline_brown"></div>
+                      </div>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191854">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/049/794/medium/IMG_4672.PNG?1665600833" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">дети 6+ Кружка-зверушка</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">10:00-13:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">1500₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191856">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/048/046/medium/IMG_6268.PNG?1648617483" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Взрослые/мк Тарелочки Сграффито</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">14:00-17:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">2000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191855">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/039/026/medium/cb2d21a4a43498ebd3fa4b4a21accd3c.jpg?1618844367" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">дети 6+ Мисочка для питомца</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">14:00-17:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">1500₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191858">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/049/002/medium/QqeK1vSj8N3xj6RpR21RJm7Lh73qTvVbLl2Tmu4sx6kf24Jm6lNTMAOtFpFS-o67IINOwpwY.jpg?1654607660" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Взрослые/мк Мисочка кит</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">18:00-20:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">2000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/191857">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/045/403/medium/IMG_3322.JPG?1639769556" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Взрослые/мк Нерикоми Чайная пара</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">18:00-21:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">2000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+          </div>
+        </div>
+        <div class="p-timetable__slider-day swiper-slide swiper-slide-prev" style="width: 365.312px; margin-right: 30px;" role="group" aria-label="5 / 8">
+          <div class="p-timetable__slider-wrap">
+              <a class="p-timetable__slider-link" href="/schedule/182299">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/054/860/medium/IMG_6160.JPG?1685959827" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Свидание</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">14:00-16:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">6000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/182300">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/054/860/medium/IMG_6160.JPG?1685959827" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Свидание</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">17:00-19:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">6000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/182301">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/054/860/medium/IMG_6160.JPG?1685959827" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Свидание</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">20:00-22:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">6000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+          </div>
+        </div>
+        <div class="p-timetable__slider-day swiper-slide swiper-slide-active" style="width: 365.312px; margin-right: 30px;" role="group" aria-label="6 / 8">
+          <div class="p-timetable__slider-wrap">
+              <a class="p-timetable__slider-link" href="/schedule/182295">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/054/860/medium/IMG_6160.JPG?1685959827" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Свидание</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">11:00-13:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">6000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/182296">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/054/860/medium/IMG_6160.JPG?1685959827" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Свидание</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">14:00-16:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">6000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/182297">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/054/860/medium/IMG_6160.JPG?1685959827" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Свидание</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">17:00-19:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">6000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/182298">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/054/860/medium/IMG_6160.JPG?1685959827" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Свидание</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">20:00-22:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">6000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+          </div>
+        </div>
+        <div class="p-timetable__slider-day swiper-slide swiper-slide-next" style="width: 365.312px; margin-right: 30px;" role="group" aria-label="7 / 8">
+          <div class="p-timetable__slider-wrap">
+              <a class="p-timetable__slider-link" href="/schedule/182292">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/054/860/medium/IMG_6160.JPG?1685959827" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Свидание</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">14:00-16:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">6000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/182293">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/054/860/medium/IMG_6160.JPG?1685959827" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Свидание</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">17:00-19:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">6000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+              <a class="p-timetable__slider-link" href="/schedule/182294">
+                <div class="p-timetable__slide p-timetable__slide-close">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/054/860/medium/IMG_6160.JPG?1685959827" alt="">
+                    <p class="p-timetable__slide-format-txt">1-дневный МК</p>
+                  <p class="p-timetable__slide-title">Свидание</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">20:00-22:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">6000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-noseat">Запись закрыта</p>
+                  </div>
+                </div>
+              </a>
+          </div>
+        </div>
+        <div class="p-timetable__slider-day swiper-slide" style="width: 365.312px; margin-right: 30px;" role="group" aria-label="8 / 8">
+          <div class="p-timetable__slider-wrap">
+              <a class="p-timetable__slider-link" href="/schedule/191864">
+                <div class="p-timetable__slide ">
+                  <img class="p-timetable__slide-logo" src="/system/attachments/files/000/041/073/medium/EJAY39ZE1uA.jpg?1626715543" alt="">
+                    <p class="p-timetable__slide-format-txt">Базовый курс</p>
+                  <p class="p-timetable__slide-title">Базовый курс</p>
+                  <div class="p-timetable__slide-timepay">
+                    <p class="p-timetable__slide-time">19:00-22:00</p>
+                    <p class="p-timetable__slide-line">|</p>
+                    <p class="p-timetable__slide-pay">16000₽</p>
+                  </div>
+                  <div class="p-timetable__slide-reservation">
+                      <p class="p-timetable__slide-seat">Осталось мест: 5</p>
+                      <div class="p-timetable__slide-entry p-timetable__slide-entry_brown p-timetable__slide-entry_close">
+                        Записаться
+                        <div class="p-timetable__slide-wrapline p-timetable__slide-wrapline_brown"></div>
+                      </div>
+                  </div>
+                </div>
+              </a>
+          </div>
+        </div>
+      </div>
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+  
+    </div>
+  
+    <script>
+    </script>
+  </div>
