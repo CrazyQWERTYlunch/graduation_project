@@ -1,0 +1,15 @@
+{% extends "home.html" %}
+
+{% block title %}{{ title }}
+{% endblock %}
+
+{% block content %}
+    {% for route in routes %}
+        <a href="{% url "routes:route" route.slug %}">
+        {{ route.name }}
+        {{ route.price }}
+        <p></p>
+        <p></p>
+        
+    {% endfor %}
+{% endblock %}
